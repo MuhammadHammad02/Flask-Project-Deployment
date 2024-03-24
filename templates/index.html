@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+    <link rel="stylesheet" href="index.html">
+</head>
+<body>
+    <div>
+    <h1>Basic Calculator</h1>
+    <form method="POST" action="/predict">
+        <label for="a">Enter number a:</label><br>
+        <input type="text" id="a" name="a"><br>
+        <label for="b">Enter number b:</label><br>
+        <input type="text" id="b" name="b"><br>
+        <label for="operation">Select operation:</label><br>
+        <select id="operation" name="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+    <br>
+    {% if prediction_text %}
+    <h2>Result: {{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
